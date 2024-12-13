@@ -7,7 +7,12 @@ app.use(express.json());
 require('dotenv').config();
 console.log('my Port no:', process.env.DEV_PORT)
 
+// Router
+const userRouter = require('./routes/user.routes');
+const taskRouter = require('./routes/task.routes');
 
+app.use(userRouter);
+app.use(taskRouter);
 
 
 // Database connection
